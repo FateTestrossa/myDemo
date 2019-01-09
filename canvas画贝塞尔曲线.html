@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三次贝塞尔曲线</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000px" height="500px" style="border: 1px solid #ccc"></canvas>
+</body>
+
+</html>
+<script>
+    // linear-gradient(140deg,rgba(245,97,69,1) 0%,rgba(251,142,90,1) 42%,rgba(255,172,129,1) 100%);
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    var my_gradient = ctx.createLinearGradient(10, 10, 10, 200);
+    my_gradient.addColorStop(0, "#F56145");
+    my_gradient.addColorStop(0.5, "#FB8E5A");
+    my_gradient.addColorStop(1, "#FFAC81");
+    ctx.beginPath();
+    ctx.moveTo(10, 10);
+    ctx.bezierCurveTo(10, 50, 100, 100, 300, 35);
+    ctx.lineTo(300, 200);
+    ctx.lineTo(10, 200);
+    ctx.closePath();
+    ctx.fillStyle = my_gradient;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(300, 35);
+    ctx.bezierCurveTo(390, 8, 500, 8, 600, 60);
+    ctx.lineTo(600, 200);
+    ctx.lineTo(300, 200);
+    ctx.closePath();
+    ctx.fillStyle = my_gradient;
+    ctx.fill();
+    // ctx.stroke();
+</script>
