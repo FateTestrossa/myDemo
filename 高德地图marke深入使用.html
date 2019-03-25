@@ -49,6 +49,7 @@
 <!-- 地图控件 ↓ -->
 <script src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
 <script>
+    var sb = [];
     var mar = null; //记录上一个marker,用于下一次点击删除
     var map = new AMap.Map('container', {
         zoom: 12, //初始化地图层级
@@ -57,6 +58,11 @@
         // console.log(e); //拿到地图点击之后的对象
         // console.log(e.lnglat.lat); //纬度
         // console.log(e.lnglat.lng); //经度
+        sb.push({
+            lat: e.lnglat.lat,
+            lng: e.lnglat.lng,
+        });
+        console.log(sb);
         if (mar != null) {
             map.remove(marker);
         }

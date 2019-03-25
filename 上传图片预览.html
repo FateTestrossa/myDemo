@@ -18,12 +18,13 @@
 </html>
 <script>
     var file = document.getElementById("file");
+    //文件发生改变触发
     file.onchange = function (e) {
-        var f = file.files[0];
-        var reader = new FileReader();
+        var f = file.files[0]; //拿到文件
+        var reader = new FileReader(); //创建一个FileReader对象读取文件
         reader.readAsDataURL(f);
         reader.onload = function () {
-            // console.log(this.result);
+            console.log(this.result);
             var result = this.result;
             var img = new Image();
             img.src = result;
