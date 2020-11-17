@@ -17,20 +17,20 @@
 
 </html>
 <script>
-    var file = document.getElementById("file");
+    const file = document.getElementById("file");
     //文件发生改变触发
     file.onchange = function (e) {
-        var f = file.files[0]; //拿到文件
-        var reader = new FileReader(); //创建一个FileReader对象读取文件
+        const f = file.files[0]; //拿到文件
+        const reader = new FileReader(); //创建一个FileReader对象读取文件
         reader.readAsDataURL(f);
         reader.onload = function () {
             console.log(this.result);
-            var result = this.result;
-            var img = new Image();
+            const result = this.result;
+            const img = new Image();
             img.src = result;
             img.onload = function(){
-                var canvas = document.getElementById("canvas");
-                var ctx = canvas.getContext("2d");
+                const canvas = document.getElementById("canvas");
+                const ctx = canvas.getContext("2d");
                 canvas.width = 200;
                 canvas.height = 200;
                 ctx.drawImage(img,0,0,canvas.width,canvas.height);
