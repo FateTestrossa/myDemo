@@ -34,20 +34,20 @@
     </div>
     <script type="text/javascript">
     // box是装图片的容器,fa是图片移动缩放的范围
-        var box = document.getElementById("box");
-        var fa = document.getElementById('father');
-        // 图片移动效果
+    const box = document.getElementById("box");
+    const fa = document.getElementById('father');
+    // 图片移动效果
         box.onmousedown=function(ev) {
-            var oEvent = ev; 
+            let oEvent = ev;
             // 浏览器有一些图片的默认事件,这里要阻止
             oEvent.preventDefault();
-            var disX = oEvent.clientX - box.offsetLeft;
-            var disY = oEvent.clientY - box.offsetTop;
+            const disX = oEvent.clientX - box.offsetLeft;
+            const disY = oEvent.clientY - box.offsetTop;
             fa.onmousemove=function (ev) {
                 oEvent = ev;
                 oEvent.preventDefault();
-                var x = oEvent.clientX -disX;
-                var y = oEvent.clientY -disY;
+                let x = oEvent.clientX - disX;
+                let y = oEvent.clientY - disY;
 
                 // 图形移动的边界判断
                 x = x <= 0 ? 0 : x;
